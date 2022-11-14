@@ -5,4 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Game.create()
+puts "Creating Usernames..."
+
+User.create(name: "TouRine", password: "ilikepizza")
+User.create(name: "Kenezz", password: "budslightlover")
+User.create(name: "Geh-rigged", password: "codegawd")
+User.create(name: "Vigi", password: "qawsedrf")
+User.create(name: "Chloemoney", password: "chloelovesmonay")
+
+puts "Creating Games..."
+
+Game.create(name: , platform: , rented:)
+
+puts "Seeding done"
