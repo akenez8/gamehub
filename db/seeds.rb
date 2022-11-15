@@ -255,4 +255,8 @@ Game.create(title: "Kirby Super Star", platform: "SNES", rented: false, image: "
 Game.create(title: "Star Fox", platform: "SNES", rented: false, image: "https://www.mobygames.com/images/covers/l/34490-star-fox-snes-front-cover.jpg")
 Game.create(title: "NBA Jam: Tournament Edition", platform: "SNES", rented: false, image: "https://www.mobygames.com/images/covers/l/55765-nba-jam-tournament-edition-snes-front-cover.jpg")
 
+puts "Creating Rentals..."
+
+Rental.create(user_id: , game_id: )
+
 puts "Seeding done"
