@@ -8,11 +8,8 @@ class RentalsController < ApplicationController
         render json: find_rental, status: :ok
     end
 
-    # def create
-    #     render json: Rental.create!(rental_params), status: :created
-    # end
-    def create
-        rental = @current_user.rentals.create!(rental_params)
+    def create  
+        rental = @user.rentals.create!(rental_params)
         render json: rental, status: :created
     end
 

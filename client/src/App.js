@@ -7,9 +7,13 @@ import Home from "./Home"
 import Login from "./Login"
 import RentAGame from "./RentAGame"
 import MyRentals from "./MyRentals"
+import Me from "./Me"
 
 function App() {
-  const [games,setGames]= useState([])
+  const [games,setGames]= useState([]);
+  const [user, setUser] = useState(null);
+  const [logout, setLogout] = useState(null);
+  const [login, setLogin] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:4000/games")
@@ -19,15 +23,13 @@ function App() {
 
   console.log(games)
 
-  // const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-  //   fetch("/me").then((response) => {
-  //     if (response.ok) {
-  //       response.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
   // if (user) {
   //   return <h2>Welcome, {user.username}!</h2>;
@@ -35,17 +37,24 @@ function App() {
   //   return <Login onLogin={setUser} />;
   // }
 
+  if (!user) {
+    return <Login setLogin={setUser} />
+  } else {
+    <h2>Welcome, {user.name}!</h2>
+  }
+
   return (
     <div className="App">
       <Router>
       <header className="App-header">
-        <Navbar />
+        <Navbar user={user} setUser={setUser} setLogout={setLogout}/>
       </header>
       <p className="siteTitle">GameHub</p>
         <Switch>
-          <Route path="/login"><Login /></Route>
-          <Route path="/rentagame"><RentAGame games={games} /></Route>
-          <Route path="/myrentals"><MyRentals /></Route>
+          <Route path="/me"><Me /></Route>
+          <Route path="/login"><Login setLogin={setUser}/></Route>
+          <Route path="/rent-a-game"><RentAGame games={games} /></Route>
+          <Route path="/my-rentals"><MyRentals /></Route>
           <Route exact path="/"><Home games={games}/></Route>
         </Switch>
       </Router>

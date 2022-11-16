@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
-function Navbar({ onLogout }) {
+function Navbar({ setLogout }) {
     function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
-        }).then(() => onLogout());
+        }).then(() => setLogout());
       }
     
     return(
