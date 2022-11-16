@@ -31,6 +31,7 @@ function Login({ setLogin }) {
           onChange={(e) => setPassword(e.target.value)}/>
         <button type="submit">Login</button>
       </form>
+      
     );
   }
 export default Login;
