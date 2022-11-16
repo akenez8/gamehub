@@ -17,8 +17,6 @@ function App() {
     .then((data) => setGames(data))
   },[])
 
-  console.log(games)
-
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {
