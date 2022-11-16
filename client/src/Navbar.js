@@ -1,16 +1,16 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
-function Navbar({ onLogout }) {
+function Navbar({ setLogout }) {
     function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
-        }).then(() => onLogout());
+        }).then(() => setLogout());
       }
     
     return(
-    <header>
-        <button onClick={handleLogout}>Logout</button>
+    <header className="logoutButtonHeader">
+        <button className="logoutButton" onClick={handleLogout}>Logout</button>
     <div className="NavDiv">
         <NavLink className="nav" style={{ marginRight: "10px" }} exact to="/" >Home</NavLink>
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/Login" >Login</NavLink>

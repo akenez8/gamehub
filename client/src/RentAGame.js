@@ -7,15 +7,14 @@ function RentAGame({games}){
             <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
         )})
     
-
     return(
         <div className="cardDivContainer">
-        <div className="RentalCardDiv">
+        <li className="RentalCardDiv">
             <ul>
                 <p>{gamesCard}</p>
                 <p>stinky</p>
             </ul>
-        </div>
+        </li>
         </div>
     )
 

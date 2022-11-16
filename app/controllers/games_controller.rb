@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
-
+    skip_before_action :authorize
+    
     def index
         render json: Game.all, status: :ok
     end
