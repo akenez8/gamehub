@@ -12,7 +12,7 @@ function Navbar({ onLogout }) {
     <header className="logoutButtonHeader">
         <button className="logoutButton" onClick={handleLogout}>Logout</button>
     <div className="NavDiv">
-        <NavLink className="nav" style={{ marginRight: "10px" }} to="/" >Home</NavLink>
+        <NavLink className="nav" style={{ marginRight: "10px" }} exact to="/" >Home</NavLink>
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/Login" >Login</NavLink>
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/RentAGame" >Rent-A-Game</NavLink>
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/MyRentals" >My Rentals</NavLink>
