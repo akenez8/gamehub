@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :rentals
   resources :games, only: [:index, :show, :create]
   resources :users, only: [:index, :create, :show]
+  post "/login", to: "sessions#create"
+  get "/me", to: "users#show"
+  delete "/logout", to: "sessions#destroy"
   # Routing logic: fallback requests for React Router.
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
