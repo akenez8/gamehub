@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Switch, Route, Routes } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 import Navbar from "./Navbar"
@@ -9,8 +9,17 @@ import RentAGame from "./RentAGame"
 import MyRentals from "./MyRentals"
 
 function App() {
+  const [games,setGames]= useState([])
 
-  const [user, setUser] = useState(null);
+  useEffect(() => {
+    fetch("http://localhost:4001/games")
+    .then((res) => res.json())
+    .then((data) => setGames(data))
+  },[])
+
+  console.log(games)
+
+  // const [user, setUser] = useState(null);
 
   // useEffect(() => {
   //   fetch("/me").then((response) => {
@@ -33,15 +42,12 @@ function App() {
         <Navbar />
       </header>
         <Switch>
-          <Route exact path="/"><Home /></Route>
+          <Route exact path="/"><Home games={games}/></Route>
           <Route path="/login"><Login /></Route>
-          <Route path="rentagame"><RentAGame /></Route>
+          <Route path="/rentagame"><RentAGame games={games} /></Route>
           <Route path="/myrentals"><MyRentals /></Route>
           </Switch>
         </Router>
-      <p className="HomeTitle">GameHub</p>
-      <p className="HomeText">We gonna put a big image here</p>
-      <p className="HomeText">Top 5 games</p>
     </div>
   );
 }
