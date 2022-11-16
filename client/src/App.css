@@ -1,22 +1,10 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: grey;
 }
 
 .App-header {
-  align-items: center;
-}
-
-.HomeTitle{
-  font-size: 30px;
-  color: rgb(246, 119, 22);
-  background-color: black;
-}
-
-.HomeText{
-  min-height: 50vh;
-  font-size:20px;
-  color: white;
+  align-items: right;
 }
 
 .NavDiv{
@@ -29,4 +17,75 @@
   margin-left: 1%;
   text-indent: 5px;
   text-decoration: underline;
+  background-color: black;
+}
+
+.logoutButton{
+  display:flex;
+  justify-content: center;
+  align-items: right;
+}
+
+.logoutButtonHeader{
+  background-color: black;
+}
+
+.loginForm{
+  background-color: rgb(246, 119, 22);
+}
+
+.siteTitle{
+  font-size: 60px;
+  color: rgb(246, 119, 22);
+  background-color: black;
+  font-weight: bold;
+  margin: 0%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.console{
+  color:purple;
+  font-weight: bold;
+}
+
+.gameCard {
+  background-color: rgba(223, 223, 230, 0.811);
+  margin: 1rem;
+  border-style: solid;
+  border-width: 4px 4px 4px 4px;
+  border-color: rgb(15, 15, 15);
+  border-radius: 0.3rem;
+  text-align: center;
+  width: 250px;
+  height: 340px;
+}
+
+.rentalCardDiv{
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding-bottom: 10px;
+}
+
+.cardDivContainer{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.HomeText{
+  min-height: 5vh;
+  font-size: 20px;
+  color: white;
+}
+
+#game_img {
+  border-style: solid;
+  border-radius: 1rem;
 }
