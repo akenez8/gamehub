@@ -18,17 +18,6 @@ class UsersController < ApplicationController
         render json: @current_user
     end
 
-    def password=(new_password)
-        salt = BCrypt::Engine::generate_salt
-        self.password_digest = BCrypt::Engine::hash_secret(new_password, salt)
-    end
-
-    def authenticate(password) #here for private?
-        salt = password_digest[0..28]
-        return nil unless BCrypt::Engine::hash_secret(password, salt) == self.password_digest
-        self
-    end
-
     private
 
     def find_user
