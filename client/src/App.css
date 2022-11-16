@@ -1,16 +1,45 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: grey;
 }
 
 .App-header {
   align-items: right;
 }
 
-.HomeTitle{
-  font-size: 30px;
+.NavDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  font-size: 12px;
+  color: white;
+  margin-left: 1%;
+  text-indent: 5px;
+  text-decoration: underline;
+  background-color: black;
+}
+
+.logoutButton{
+  display:flex;
+  justify-content: center;
+  align-items: right;
+}
+
+.logoutButtonHeader{
+  background-color: black;
+}
+
+.loginForm{
+  background-color: rgb(246, 119, 22);
+}
+
+.siteTitle{
+  font-size: 60px;
   color: rgb(246, 119, 22);
   background-color: black;
+  font-weight: bold;
+  margin: 0%;
 }
 
 .bold {
@@ -54,18 +83,6 @@
   min-height: 5vh;
   font-size: 20px;
   color: white;
-}
-
-.NavDiv{
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  justify-content: left;
-  font-size: 12px;
-  color: white;
-  margin-left: 1%;
-  text-indent: 5px;
-  text-decoration: underline;
 }
 
 #game_img {

@@ -23,12 +23,17 @@ function Login({ onLogin }) {
     }
   
     return (
-      <form onSubmit={handleSubmit}>
-        <input
+      <form className="loginForm" onSubmit={handleSubmit}>
+        <input 
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+          placeholder="username"
+          onChange={(e) => setName(e.target.value)}/>
+          <input 
+          type="text"
+          placeholder="password"
+          value={name}
+          onChange={(e) => setName(e.target.value)}/>
         <button type="submit">Login</button>
       </form>
     );
