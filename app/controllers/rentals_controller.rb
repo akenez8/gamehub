@@ -7,7 +7,7 @@ class RentalsController < ApplicationController
     def show
         render json: find_rental, status: :ok
     end
-    
+
     def create
         rental = @user.rentals.create!(rental_params)
         render json: rental, status: :created
