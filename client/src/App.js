@@ -23,19 +23,16 @@ function App() {
 
   console.log(games)
 
-  useEffect(() => {
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // const [user, setUser] = useState(null);
 
-  // if (user) {
-  //   return <h2>Welcome, {user.username}!</h2>;
-  // } else {
-  //   return <Login onLogin={setUser} />;
-  // }
+  // useEffect(() => {
+  //   fetch("/me").then((response) => {
+  //     if (response.ok) {
+  //       response.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
+
 
   if (!user) {
     return <Login setLogin={setUser} />
