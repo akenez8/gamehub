@@ -9,8 +9,8 @@ function Navbar({ onLogout }) {
       }
     
     return(
-    <header>
-        <button onClick={handleLogout}>Logout</button>
+    <header className="logoutButtonHeader">
+        <button className="logoutButton" onClick={handleLogout}>Logout</button>
     <div className="NavDiv">
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/" >Home</NavLink>
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/Login" >Login</NavLink>

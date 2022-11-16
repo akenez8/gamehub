@@ -41,6 +41,7 @@ function App() {
       <header className="App-header">
         <Navbar />
       </header>
+      <p className="siteTitle">GameHub</p>
         <Switch>
           <Route exact path="/"><Home games={games}/></Route>
           <Route path="/login"><Login /></Route>
