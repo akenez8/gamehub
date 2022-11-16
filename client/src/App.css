@@ -59,8 +59,8 @@
   border-color: rgb(15, 15, 15);
   border-radius: 0.3rem;
   text-align: center;
-  width: 250px;
-  height: 340px;
+  width: 225px;
+  height: 250px;
 }
 
 .rentalCardDiv{
@@ -80,12 +80,8 @@
 }
 
 .HomeText{
-  min-height: 5vh;
-  font-size: 20px;
+  min-height: 50vh;
+  font-size:20px;
   color: white;
 }
 
-#game_img {
-  border-style: solid;
-  border-radius: 1rem;
-}
