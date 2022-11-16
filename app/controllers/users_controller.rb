@@ -18,7 +18,6 @@ class UsersController < ApplicationController
         render json: User.create!(user_params), status: :created
     end
 
-
     private
 
     def find_user
@@ -29,3 +28,4 @@ class UsersController < ApplicationController
         params.permit(:name, :password)
     end
 end
+
