@@ -42,12 +42,12 @@ function App() {
         <Navbar />
       </header>
         <Switch>
-          <Route exact path="/"><Home games={games}/></Route>
           <Route path="/login"><Login /></Route>
           <Route path="/rentagame"><RentAGame games={games} /></Route>
           <Route path="/myrentals"><MyRentals /></Route>
-          </Switch>
-        </Router>
+          <Route exact path="/"><Home games={games}/></Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
