@@ -64,24 +64,6 @@
   height: 340px;
 }
 
-.cardDivContainer{
-  list-style: none;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10px;
-}
-
-.rentalCardDiv{
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    padding-bottom: 10px;
-}
-
-
-
 .HomeText{
   min-height: 5vh;
   font-size: 20px;
@@ -96,4 +78,5 @@
 #home_card {
   display: flex;
   justify-content: center;
+  flex-flow: wrap;
 }
