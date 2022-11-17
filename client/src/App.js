@@ -22,8 +22,6 @@ function App() {
     .then((data) => setGames(data))
   },[])
 
-  // const [user, setUser] = useState(null);
-
   // useEffect(() => {
   //   fetch("/me").then((response) => {
   //     if (response.ok) {
