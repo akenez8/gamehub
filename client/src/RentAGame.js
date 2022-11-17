@@ -9,14 +9,13 @@ function RentAGame({games}){
         console.log(games)
     
     return(
-        <div className="cardDivContainer">
-        <li className="RentalCardDiv">
-            <ul>
-                <p>{gamesCard}</p>
-                <p>stinky</p>
-            </ul>
-        </li>
+    <div className="row">
+        <div className='column'>
+            <div id="home_card">
+                {gamesCard}
+            </div>
         </div>
+    </div>
     )
 
 }
