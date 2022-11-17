@@ -22,16 +22,48 @@
 
 .logoutButton{
   display:flex;
-  justify-content: center;
-  align-items: right;
+  justify-content: right;
 }
 
-.logoutButtonHeader{
-  background-color: black;
+.navHeader{
+    background-color: black;
+}
+
+.logoutButtonDiv{
+  display: flex;
+  justify-content: right;
 }
 
 .loginForm{
+  padding-top: 1%;
   background-color: rgb(246, 119, 22);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.usernameInput{
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  text-align: center;
+}
+
+.passwordInput{
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+  text-align: center;
+}
+
+.loginButton{
+  max-width: 100px;
+}
+
+.createAccountButton{
+  color: black;
+  
 }
 
 .siteTitle{
@@ -52,6 +84,8 @@
 }
 
 .gameCard {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   background-color: rgba(223, 223, 230, 0.811);
   margin: 1rem;
@@ -64,7 +98,14 @@
   height: 340px;
 }
 
-.DescribeText{
+.cardImage{
+  display:flex;
+  align-self: center;
+  margin: auto;
+}
+
+.HomeText{
+  min-height: 5vh;
   font-size: 20px;
   color: white;
   width: 500px;

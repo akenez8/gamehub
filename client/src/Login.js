@@ -19,17 +19,25 @@ function Login({ setLogin }) {
   
     return (
       <form className="loginForm" onSubmit={handleSubmit}>
+        <p>
         <input 
+          className="usernameInput"
           type="text"
           value={name}
           placeholder="username"
           onChange={(e) => setName(e.target.value)}/>
+          </p>
+          <p>
           <input 
+          className="passwordInput"
           type="text"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}/>
-        <button type="submit">Login</button>
+          </p>
+        <button className="loginButton"type="submit">Login</button>
+        <p>Dont have an account?</p>
+        <button className="createAccountButton" type="submit">Create Account</button>
       </form>
       
     );
