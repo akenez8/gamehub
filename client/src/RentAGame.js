@@ -6,6 +6,7 @@ function RentAGame({games}){
         return(
             <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
         )})
+        console.log(games)
     
     return(
         <div className="cardDivContainer">
