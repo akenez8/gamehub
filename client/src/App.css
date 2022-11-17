@@ -92,3 +92,8 @@
   border-style: solid;
   border-radius: 1rem;
 }
+
+#home_card {
+  display: flex;
+  justify-content: center;
+}
