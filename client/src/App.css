@@ -64,10 +64,18 @@
   height: 340px;
 }
 
-.HomeText{
-  min-height: 5vh;
+.DescribeText{
   font-size: 20px;
   color: white;
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.TopGames{
+  font-size: 40px;
+  color: white;
+  font-style: oblique;
 }
 
 #game_img {
