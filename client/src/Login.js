@@ -28,9 +28,16 @@ function Login({ setLogin }) {
         },
         body: JSON.stringify({ name, password }),
       })
-        .then((r) => r.json())
-        .then((user) => setLogin(user));
-    }
+        // .then((r) => r.json())
+        .then((res) => {
+          if (res.ok) {
+            res.json().then(setLogin)
+          } else {
+            res.json().then(event => alert(event.error))
+          }
+        })
+        }
+    
   
     return (
       <form className="loginForm" onSubmit={handleSubmit}>

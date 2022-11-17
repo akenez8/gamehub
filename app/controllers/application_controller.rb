@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
     render json: { errors: obj.record.errors.full_messages }, status: 422
   end
   
-  def authorize 
+  def authorize
     @user = User.find_by(id: session[:user_id])
     render json: { errors: ["Not authorized"] }, status: :unauthorized unless @user
   end

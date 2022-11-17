@@ -41,11 +41,17 @@ function App() {
   // }, []);
 
   if (!user) {
-    return <Login setLogin={setUser} />
+    return <Login setLogin={onLogin} />
   } else {
     <h2>Welcome, {user.name}!</h2>
   }
-  
+  function onLogin(user) {
+    setUser(user);
+  }
+
+  // function onLogout() {
+  //   setUser("");
+  // }
   return (
     <div className="App">
       <Router>
