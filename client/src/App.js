@@ -47,13 +47,13 @@ function App() {
         <Navbar user={user} setUser={setUser} setLogout={setLogout}/>
       </header>
       <p className="siteTitle">GameHub</p>
-        <Switch>
-          <Route path="/me"><Me /></Route>
-          <Route path="/login"><Login setLogin={setUser}/></Route>
-          <Route path="/rent-a-game"><RentAGame games={games} /></Route>
-          <Route path="/my-rentals"><MyRentals /></Route>
-          <Route exact path="/"><Home games={games}/></Route>
-        </Switch>
+      <Switch>
+        <Route path="/me"><Me /></Route>
+        <Route path="/login"><Login setLogin={setUser}/></Route>
+        <Route path="/RentAGame"><RentAGame games={games} /></Route>
+        <Route path="/MyRentals"><MyRentals /></Route>
+        <Route exact path="/"><Home games={games}/></Route>
+      </Switch>
       </Router>
     </div>
   );
