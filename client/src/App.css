@@ -22,16 +22,41 @@
 
 .logoutButton{
   display:flex;
-  justify-content: center;
-  align-items: right;
+  justify-content: right;
 }
 
-.logoutButtonHeader{
-  background-color: black;
+.navHeader{
+    background-color: black;
+}
+
+.logoutButtonDiv{
+  display: flex;
+  justify-content: right;
 }
 
 .loginForm{
   background-color: rgb(246, 119, 22);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.usernameInput{
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  text-align: center;
+}
+
+.passwordInput{
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  text-align: center;
+}
+
+.loginButton{
+  max-width: 80px;
 }
 
 .siteTitle{

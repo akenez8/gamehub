@@ -21,8 +21,6 @@ function App() {
     .then((data) => setGames(data))
   },[])
 
-  console.log(games)
-
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {
@@ -32,7 +30,6 @@ function App() {
   //     }
   //   });
   // }, []);
-
 
   if (!user) {
     return <Login setLogin={setUser} />

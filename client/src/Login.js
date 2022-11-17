@@ -20,16 +20,18 @@ function Login({ setLogin }) {
     return (
       <form className="loginForm" onSubmit={handleSubmit}>
         <input 
+          className="usernameInput"
           type="text"
           value={name}
           placeholder="username"
           onChange={(e) => setName(e.target.value)}/>
           <input 
+          className="passwordInput"
           type="text"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}/>
-        <button type="submit">Login</button>
+        <button className="loginButton"type="submit">Login</button>
       </form>
       
     );
