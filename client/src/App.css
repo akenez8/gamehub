@@ -17,7 +17,7 @@
   margin-left: 1%;
   text-indent: 5px;
   text-decoration: underline;
-  background-color: black;
+  background-color: white;
 }
 
 .logoutButton{
@@ -63,12 +63,12 @@
 
 .createAccountButton{
   color: black;
-  
 }
 
-.siteTitle{
+.font-effect-fire-animation{
+  font-family: 'Russo One', serif;
   font-size: 60px;
-  color: rgb(246, 119, 22);
+  color: black;
   background-color: black;
   font-weight: bold;
   margin: 0%;
@@ -105,15 +105,18 @@
 }
 
 .DescribeText{
+  font-family: 'Play', serif;
   min-height: 5vh;
   font-size: 20px;
   color: white;
   width: 500px;
   margin: auto;
   margin-top: 30px;
+  text-align: center;
 }
 
 .TopGames{
+  font-family: 'Play', serif;
   font-size: 40px;
   color: white;
   font-style: oblique;

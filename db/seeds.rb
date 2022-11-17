@@ -16,7 +16,7 @@ Game.create(title: "F-Zero GX", platform: "GameCube", rented: false, image: "htt
 Game.create(title: "Paper Mario: The Thousand Year Door", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/37912-paper-mario-the-thousand-year-door-gamecube-front-cover.jpg")
 Game.create(title: "Viewtiful Joe", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/26261-viewtiful-joe-gamecube-front-cover.jpg")
 Game.create(title: "Super Mario Sunshine", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/14217-super-mario-sunshine-gamecube-front-cover.jpg")
-Game.create(title: "Super Moneky Ball", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/26293-super-monkey-ball-gamecube-front-cover.jpg")
+Game.create(title: "Super Monkey Ball", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/26293-super-monkey-ball-gamecube-front-cover.jpg")
 Game.create(title: "Mario Kart: Double Dash", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/170229-mario-kart-double-dash-gamecube-front-cover.jpg")
 Game.create(title: "Luigi's Mansion", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/26855-luigi-s-mansion-gamecube-front-cover.jpg")
 Game.create(title: "Super Mario Strikers", platform: "GameCube", rented: false, image: "https://www.mobygames.com/images/covers/l/57320-super-mario-strikers-gamecube-front-cover.jpg")
