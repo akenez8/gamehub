@@ -15,9 +15,9 @@ function Navbar({ user, setUser, setLogout }) {
       </div>
     <div className="NavDiv">
         <NavLink className="nav" style={{ marginRight: "10px" }} exact to="/" >Home</NavLink>
-        {user ? null : <NavLink className="nav" style={{ marginRight: "10px" }} to="/Login" >Login</NavLink> }
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/RentAGame" >Rent-A-Game</NavLink>
         <NavLink className="nav" style={{ marginRight: "10px" }} to="/MyRentals" >My Rentals</NavLink>
+        {user ? null : <NavLink className="nav" style={{ marginRight: "10px" }} to="/Login" >Login</NavLink> }
         {user ? null : <NavLink className="nav" style={{ marginRight: "10px" }} to="/SignUp" >SignUp</NavLink>}
     </div>
     </header>
