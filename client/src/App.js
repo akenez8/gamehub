@@ -12,7 +12,7 @@ import SignUp from "./SignUp"
 
 function App() {
   const [games,setGames]= useState([]);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(false);
   const [logout, setLogout] = useState(null);
   const [login, setLogin] = useState('');
 
@@ -37,7 +37,7 @@ function App() {
   } else {
     <h2>Welcome, {user.name}!</h2>
   }
-
+  
   return (
     <div className="App">
       <Router>
