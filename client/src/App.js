@@ -24,14 +24,6 @@ function App() {
     .then((data) => setGames(data))
   },[])
 
-  useEffect(() => {
-    fetch("http://localhost:4000/rentals")
-    .then((res) => res.json())
-    .then((data) => setRentals(data))
-  }, [])
-
-  // const [user, setUser] = useState(null);
-
   // useEffect(() => {
   //   fetch("/me").then((response) => {
   //     if (response.ok) {

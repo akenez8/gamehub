@@ -13,6 +13,7 @@ for (let x = 0; x < games.length; x++) {
         arr[j] = temp;
     }
 }
+
 let randomGames = []
 for (let i = 0; i < 5 ; i++) {
     randomGames.push(arr[i])
@@ -23,7 +24,6 @@ for (let i = 0; i < 5 ; i++) {
             
             <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
         )})
-
 
     return(
     <div>

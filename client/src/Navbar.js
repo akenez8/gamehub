@@ -5,7 +5,12 @@ function Navbar({ user, setUser, setLogout }) {
     function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
-        }).then(() => setLogout());
+        })
+        .then(res => {
+          if (res.ok) {
+            console.log('delete')
+          }
+        })
       }
     
     return(
