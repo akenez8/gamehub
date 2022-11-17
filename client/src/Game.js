@@ -5,7 +5,7 @@ function Game({title, image, platform}){
         <div className="gameCard">
             <span className="bold">{title}</span>
             <img className="cardImage" id="game_img" src={image} width="220" height="180" alt="{title}"/>
-            <a className="console">{platform}</a>
+            <p className="console">{platform}</p>
             <p>
             <button>Rent</button>
             </p>

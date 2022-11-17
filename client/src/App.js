@@ -43,7 +43,7 @@ function App() {
       <header className="App-header">
         <Navbar user={user} setUser={setUser} setLogout={setLogout}/>
       </header>
-      <p className="siteTitle">GameHub</p>
+      <p className="font-effect-fire-animation">GameHub</p>
       <Switch>
         <Route path="/me"><Me /></Route>
         <Route path="/login"><Login setLogin={setUser}/></Route>
