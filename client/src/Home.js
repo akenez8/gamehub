@@ -20,6 +20,7 @@ for (let i = 0; i < 5 ; i++) {
 
     const gamesCardTwo = randomGames.map((game) => {
         return(
+            
             <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
         )})
 

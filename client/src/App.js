@@ -15,12 +15,20 @@ function App() {
   const [user, setUser] = useState(false);
   const [logout, setLogout] = useState(null);
   const [login, setLogin] = useState('');
+  const [rentals, setRentals] = useState([])
+
 
   useEffect(() => {
     fetch("http://localhost:4000/games")
     .then((res) => res.json())
     .then((data) => setGames(data))
   },[])
+
+  useEffect(() => {
+    fetch("http://localhost:4000/rentals")
+    .then((res) => res.json())
+    .then((data) => setRentals(data))
+  }, [])
 
   // const [user, setUser] = useState(null);
 
@@ -49,7 +57,7 @@ function App() {
         <Route path="/me"><Me /></Route>
         <Route path="/login"><Login setLogin={setUser}/></Route>
         <Route path="/RentAGame"><RentAGame games={games} /></Route>
-        <Route path="/MyRentals"><MyRentals /></Route>
+        <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals}/></Route>
         <Route path="/SignUp"><SignUp setLogin={setUser} user={user} /></Route>
         <Route exact path="/"><Home games={games}/></Route>
       </Switch>

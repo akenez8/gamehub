@@ -1,5 +1,6 @@
 class RentalsController < ApplicationController
-
+    skip_before_action :authorize
+    
     def index
         render json: Rental.all, status: :ok
     end
