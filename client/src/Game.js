@@ -13,4 +13,5 @@ function Game({title, image, platform}){
     )
 }
 
+// rented ? <button>Return</button> : <button>Rent</button>
 export default Game;

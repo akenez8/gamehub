@@ -15,7 +15,7 @@ import React, { useState } from 'react';
 //   );
 // }
 
-function Login({ setLogin }) {
+function Login({ setLogin, user }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 

@@ -16,7 +16,7 @@ function App() {
   const [logout, setLogout] = useState(null);
   const [login, setLogin] = useState('');
   const [rentals, setRentals] = useState([])
-
+  const [rented, setRented] = useState(false)
 
   useEffect(() => {
     fetch("http://localhost:4000/games")
