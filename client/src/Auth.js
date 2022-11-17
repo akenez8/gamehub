@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 function Auth({setCurrentUser}) {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
-    const [login, setLogin] = useState('')
     const [errors, setErrors] = useState([])
 
     function onSubmit(e) {

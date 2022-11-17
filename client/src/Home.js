@@ -2,11 +2,31 @@ import React from 'react';
 import Game from "./Game"
 
 function Home({games}){
-    const gamesCard = games.map((game) => {
+    let deck = [];
+
+for (let x = 0; x < games.length; x++) {
+    deck.push(games[x])
+}
+
+for (let i = deck.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    let temp = deck[i];
+    deck[i] = deck[j];
+    deck[j] = temp;
+}
+
+let randomGames = []
+
+for (let i = 0; i < 5; i++) {
+    randomGames.push(deck[i])
+}
+
+    const gamesCard = randomGames.map((game) => {
         return(
             <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
         )})
-    
+
+
     return(
     <div>
       <p className="HomeTitle">GameHub</p>
