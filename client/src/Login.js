@@ -1,4 +1,19 @@
 import React, { useState } from 'react';
+// import { useHistory } from "react-router-dom";
+
+// function HomeButton() {
+//   let history = useHistory();
+
+//   function handleClick() {
+//     history.push("/rent-a-game");
+//   }
+
+//   return (
+//     <button type="loginButton" onClick={handleClick}>
+//       Go home
+//     </button>
+//   );
+// }
 
 function Login({ setLogin }) {
     const [name, setName] = useState("");

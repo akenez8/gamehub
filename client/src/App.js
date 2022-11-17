@@ -8,6 +8,7 @@ import Login from "./Login"
 import RentAGame from "./RentAGame"
 import MyRentals from "./MyRentals"
 import Me from "./Me"
+import SignUp from "./SignUp"
 
 function App() {
   const [games,setGames]= useState([]);
@@ -49,6 +50,7 @@ function App() {
         <Route path="/login"><Login setLogin={setUser}/></Route>
         <Route path="/RentAGame"><RentAGame games={games} /></Route>
         <Route path="/MyRentals"><MyRentals /></Route>
+        <Route path="/SignUp"><SignUp setLogin={setUser} user={user} /></Route>
         <Route exact path="/"><Home games={games}/></Route>
       </Switch>
       </Router>
