@@ -2,14 +2,14 @@ import React from 'react';
 
 function Game({title, image, platform}){
     return(
-        <li className="gameCard">
+        <div className="gameCard">
             <span className="bold">{title}</span>
             <img id="game_img" src={image} width="220" height="180" alt="{title}"/>
-            <span className="console">{platform}</span>
-            <p>
+            <p className="console">{platform}</p>
+            <a>
             <button>Rent</button>
-            </p>
-        </li>
+            </a>
+        </div>
     )
 }
 
