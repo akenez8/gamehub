@@ -12,9 +12,11 @@ import SignUp from "./SignUp"
 
 function App() {
   const [games,setGames]= useState([]);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(false);
   const [logout, setLogout] = useState(null);
   const [login, setLogin] = useState('');
+  const [rentals, setRentals] = useState([])
+
 
   useEffect(() => {
     fetch("http://localhost:4000/games")
@@ -31,11 +33,17 @@ function App() {
   // }, []);
 
   if (!user) {
-    return <Login setLogin={setUser} />
+    return <Login setLogin={onLogin} />
   } else {
     <h2>Welcome, {user.name}!</h2>
   }
+  function onLogin(user) {
+    setUser(user);
+  }
 
+  // function onLogout() {
+  //   setUser("");
+  // }
   return (
     <div className="App">
       <Router>
@@ -47,7 +55,7 @@ function App() {
         <Route path="/me"><Me /></Route>
         <Route path="/login"><Login setLogin={setUser}/></Route>
         <Route path="/RentAGame"><RentAGame games={games} /></Route>
-        <Route path="/MyRentals"><MyRentals /></Route>
+        <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals}/></Route>
         <Route path="/SignUp"><SignUp setLogin={setUser} user={user} /></Route>
         <Route exact path="/"><Home games={games}/></Route>
       </Switch>

@@ -1,6 +1,10 @@
 import React from 'react';
 
-function MyRentals(){
+
+
+function MyRentals({rentals, setRentals}){
+    // const userRentals = rentals.map((game) => )
+
     return(
         <div>My Rentals</div>
     )

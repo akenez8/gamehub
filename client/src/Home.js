@@ -21,6 +21,7 @@ for (let i = 0; i < 5 ; i++) {
 
     const gamesCardTwo = randomGames.map((game) => {
         return(
+            
             <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
         )})
 
@@ -39,6 +40,7 @@ for (let i = 0; i < 5 ; i++) {
                 </div>
             </div>
         </div>
+        <audio name="GameHub" src="https://www.youtube.com/watch?v=N9uTi3R4jlo" loop="true" autostart="true" hidden="true" controls></audio>
     </div>
     )
 }
