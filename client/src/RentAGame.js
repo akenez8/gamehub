@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import Game from "./Game"
 
 const RentAGame = ({games, userAddRental}) => {
