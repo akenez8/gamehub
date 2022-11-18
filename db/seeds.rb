@@ -251,9 +251,7 @@ Game.create(title: "NBA Jam: Tournament Edition", platform: "SNES", rented: fals
 puts "Creating Rentals..."
 
 20.times do |i|
-    Rental.create(user_id: rand(1..6), game_id: rand(1..238))
+    Rental.create(user_id: rand(1..6), game_id: rand(1..238), day: 7)
 end
-
-# Rental.create(user_id: 2, game_id: 1)
 
 puts "Seeding done"
