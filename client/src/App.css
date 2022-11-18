@@ -7,6 +7,12 @@
   align-items: right;
 }
 
+hr {
+    border: 1px solid white;
+    position: center;
+    width: 60%;
+}
+
 .nav {
   overflow: hidden;
   border-radius: 5px;
@@ -24,10 +30,14 @@
 }
 
 .usernameSpan{
+  float: right;
+  font-size: 20px;
   color: orange;
+  font-family: 'Play', serif;
 }
 
 .logoutButton{
+  margin-left: 50px;
   display: flex;
   justify-content: right;
 }
@@ -42,22 +52,15 @@
 }
 
 .loginForm{
-  padding-top: 1%;
+  font-family: 'Russo One', serif;
   background-color: rgb(246, 119, 22);
   align-items: center;
   display: flex;
   flex-direction: column;
-  
+  padding: 30px;
 }
 
-.usernameInput{
-  display: flex;
-  justify-content: center;
-  max-width: 300px;
-  text-align: center;
-}
-
-.passwordInput{
+.usernameInput, .passwordInput {
   display: flex;
   justify-content: center;
   max-width: 300px;
@@ -84,6 +87,7 @@
 .bold {
   font-weight: bold;
   color: white;
+  padding: 20px;
 }
 
 .console {
@@ -103,13 +107,14 @@
   border-radius: 1rem;
   text-align: center;
   width: 250px;
-  height: 440px;
+  height: 455px;
   box-shadow: 5px 5px white;
 }
 
-.MyRentalsTitle{
+.myRentalsTitle{
+  font-family: 'Play', serif;
   font-size: 40px;
-  color:orange;
+  color:white;
   text-align: center;
 }
 
@@ -146,7 +151,8 @@
   width: 500px;
   margin: auto;
   margin-top: 30px;
-  text-align: center;
+  line-height: 2.0;
+  letter-spacing: 2px;
 }
 
 .TopGames {
@@ -169,4 +175,32 @@
 
 .day_rent {
   color: white;
+}
+
+#text {
+  color: white;
+}
+
+.account-text {
+  padding: 0px;
+  font-size: 19px;
+}
+
+.login-text {
+  font-size: 20px;
+}
+
+.editButton {
+  width: 50px;
+  margin-left: 95px;
+}
+
+.returnButton {
+  width: 70px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.signup-input {
+  margin-left: 20px
 }

@@ -17,8 +17,8 @@ function Navbar({ user, setUser, setLogout }) {
     
     return(
     <header className="navHeader">
-      {user && <span className="usernameSpan">Welcome, {user.name}!</span>}
       <div className="logoutButtonDiv">
+        {user && <span className="usernameSpan">Welcome, {user.name}!</span>}
         { user ? <button className="logoutButton" onClick={handleLogout}>Logout</button> : null} 
       </div>
     <div className="NavDiv">
