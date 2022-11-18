@@ -19,8 +19,6 @@ function Game({title, image, platform, userAddRental, id}){
             </div>
             <p className="console">{platform}</p>
             <p>
-
-            <button onClick={handleClick}>Rent</button>
             <select onChange={(e) => setDay(e.target.value)}>
                 <option value="">Select Rent Duration</option>
                 <option value="7">7 days</option>
@@ -30,9 +28,9 @@ function Game({title, image, platform, userAddRental, id}){
             </select>
 
             </p>
-            <p>
-                <button className="rentButton">Rent</button>
-            </p>   
+            <div>
+                <button onClick={handleClick}>Rent</button>
+            </div>
         </div>
     )
 }

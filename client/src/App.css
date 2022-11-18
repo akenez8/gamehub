@@ -84,11 +84,10 @@
 .bold {
   padding-top: 5%;
   font-weight: bold;
-  padding-top: 5%;
-  color: white
+  color: white;
 }
 
-.console{
+.console {
   color: white;
   font-weight: bold;
 }
@@ -156,6 +155,10 @@
   transform: rotateY(360deg);
 }
 
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(360deg);
+}
+
 .DescribeText {
   font-family: 'Play', serif;
   min-height: 5vh;
@@ -180,6 +183,6 @@
   flex-flow: wrap;
 }
 
-.days_update{
+.day_rent {
   color: white;
 }
