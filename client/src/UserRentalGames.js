@@ -13,7 +13,9 @@ function updateRental(){
             <span className="bold">{title}</span>
             <img className="cardImage" id="game_img" src={image} width="220" height="180" alt="{title}"/>
             <p className="console">{platform}</p>
-            <p>days: {updateDay}</p>
+            <div className='days_update'>
+                <p>days: {updateDay}</p>
+            </div>
             {editToggle ? (<p><button onClick={updateRental}>Change Rental</button>
             <select onChange={(e) => setDay(e.target.value)}>
                 <option value="">Select Rent Duration</option>

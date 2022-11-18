@@ -10,7 +10,13 @@ function Game({title, image, platform, userAddRental, id}){
     return(
         <div className="gameCard">
             <span className="bold">{title}</span>
-            <img className="cardImage" id="game_img" src={image} width="220" height="180" alt="{title}"/>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img className="cardImage" id="game_img" src={image} width="220" height="180" alt="{title}"/>
+                    </div>
+                </div>
+            </div>
             <p className="console">{platform}</p>
             <p>
             <button onClick={handleClick}>Rent</button>

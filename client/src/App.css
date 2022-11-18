@@ -1,23 +1,26 @@
 .App {
   text-align: center;
-  background-color: grey;
+  background-color: black;
 }
 
 .App-header {
   align-items: right;
 }
 
-.NavDiv{
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  justify-content: left;
-  font-size: 12px;
-  color: white;
-  margin-left: 1%;
-  text-indent: 5px;
-  text-decoration: underline;
-  background-color: black;
+.nav {
+  overflow: hidden;
+  border-radius: 5px;
+  float: left;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px;
+  margin-left: 10px;
+  text-decoration: none;
+  background-color: white;
+} 
+
+.nav:hover {
+  background-color: dimgrey;
 }
 
 .usernameSpan{
@@ -25,7 +28,7 @@
 }
 
 .logoutButton{
-  display:flex;
+  display: flex;
   justify-content: right;
 }
 
@@ -75,31 +78,35 @@
   color: black;
   background-color: black;
   font-weight: bold;
-  margin: 0%;
+  margin: 50px;
 }
 
 .bold {
   font-weight: bold;
+  padding-top: 5%;
+  color: white
 }
 
 .console{
-  color:purple;
+  color: white;
   font-weight: bold;
 }
 
 .gameCard {
+  font-family: 'Play', serif;
   display: flex;
   flex-direction: column;
   list-style: none;
-  background-color: rgba(223, 223, 230, 0.811);
+  background-color: black;
   margin: 1rem;
   border-style: solid;
-  border-width: 4px 4px 4px 4px;
-  border-color: rgb(15, 15, 15);
-  border-radius: 0.3rem;
+  border-width: 3px 3px 3px 3px;
+  border-color: white;
+  border-radius: 1rem;
   text-align: center;
   width: 250px;
-  height: 340px;
+  height: 440px;
+  box-shadow: 5px 5px white;
 }
 
 .MyRentalsTitle{
@@ -109,9 +116,28 @@
 }
 
 .cardImage{
-  display:flex;
+  display: flex;
   align-self: center;
   margin: auto;
+  padding-top: 30px;
+}
+
+.flip-box {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(360deg);
 }
 
 .DescribeText{
@@ -141,4 +167,8 @@
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+}
+
+.days_update{
+  color: white;
 }
