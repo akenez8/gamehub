@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // function HomeButton() {
 //   let history = useHistory();
@@ -18,6 +18,7 @@ import React, { useState } from 'react';
 function Login({ setLogin, user }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
+    const history = useHistory()
 
     function handleSubmit(e) {
       e.preventDefault();
@@ -31,7 +32,11 @@ function Login({ setLogin, user }) {
         // .then((r) => r.json())
         .then((res) => {
           if (res.ok) {
-            res.json().then(setLogin)
+            res.json().then((data)=>{
+              sessionStorage.setItem("user", JSON.stringify(data))
+              setLogin(data)
+              history.push('/')
+            })
           } else {
             res.json().then(event => alert(event.error))
           }
@@ -40,6 +45,7 @@ function Login({ setLogin, user }) {
     
   
     return (
+      <>
       <form className="loginForm" onSubmit={handleSubmit}>
         <p>
         <input 
@@ -59,8 +65,9 @@ function Login({ setLogin, user }) {
           </p>
         <button className="loginButton"type="submit">Login</button>
         <p>Dont have an account?</p>
-        <button className="createAccountButton" type="submit">Create Account</button>
       </form>
+        <button className="createAccountButton" onClick={()=> history.push('/SignUp')}>Create Account</button>
+      </>
       
     );
   }

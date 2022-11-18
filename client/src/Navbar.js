@@ -3,19 +3,21 @@ import { NavLink } from "react-router-dom";
 
 function Navbar({ user, setUser, setLogout }) {
     function handleLogout() {
+        setLogout()
         fetch("/logout", {
           method: "DELETE",
         })
         .then(res => {
+          console.log(res);
           if (res.ok) {
-            console.log('delete')
+          
           }
         })
       }
     
     return(
     <header className="navHeader">
-      <span className="usernameSpan">Welcome, {user.name}!</span>
+      {user && <span className="usernameSpan">Welcome, {user.name}!</span>}
       <div className="logoutButtonDiv">
         { user ? <button className="logoutButton" onClick={handleLogout}>Logout</button> : null} 
       </div>
