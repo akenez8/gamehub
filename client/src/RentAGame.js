@@ -6,7 +6,7 @@ const RentAGame = ({games}) => {
     const RentAGameComp = games.filter((game) => {
         if (console === "All") return true
         return game.platform === console
-    }).map((game) => <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />)
+    }).map((game) => <Game key={game.id} title={game.title} image={game.image} platform={game.platform}/>)
 
     return (
         <div>

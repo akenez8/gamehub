@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Game({title, image, platform}){
+    const [day, setDay] = useState("")
 
     return(
         <div className="gameCard">
@@ -9,6 +10,13 @@ function Game({title, image, platform}){
             <p className="console">{platform}</p>
             <p>
             <button>Rent</button>
+            <select onChange={(e) => setDay(e.target.value)}>
+                <option value="" disabled>Days Rent</option>
+                <option value="7">7 days</option>
+                <option value="14">14 days</option>
+                <option value="21">21 days</option>
+                <option value="30">30 days</option>
+            </select>
             </p>
         </div>
     )
