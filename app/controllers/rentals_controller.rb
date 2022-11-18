@@ -27,6 +27,6 @@ class RentalsController < ApplicationController
     end
 
     def rental_params
-        params.permit(:user_id, :game_id)
+        params.permit(:user_id, :game_id, :day)
     end
 end
