@@ -16,16 +16,15 @@ function MyRentals({rentals, setRentals}){
     //     user.id == rental.user_id ? 
     // })
 
-    const userGameCard = userRentedGames.map((game) => {
-        return(
-            <UserRentalGames title={game.title} image={game.image} platform={game.platform}/>
-        )
-    }
-    )
+    // const userGameCard = userRentedGames.map((game) => {
+    //     return(
+    //         <UserRentalGames title={game.title} image={game.image} platform={game.platform}/>
+    //     )})
+
     return(
         <div>
             <p className="MyRentalsTitle">Your Rented Games</p>
-            <p>{userGameCard}</p>
+            {/* <p>{rentals && userGameCard}</p> */}
         </div>
         
     )
