@@ -1,20 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-// function HomeButton() {
-//   let history = useHistory();
-
-//   function handleClick() {
-//     history.push("/rent-a-game");
-//   }
-
-//   return (
-//     <button type="loginButton" onClick={handleClick}>
-//       Go home
-//     </button>
-//   );
-// }
-
 function Login({ setLogin, user }) {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -29,7 +15,6 @@ function Login({ setLogin, user }) {
         },
         body: JSON.stringify({ name, password }),
       })
-        // .then((r) => r.json())
         .then((res) => {
           if (res.ok) {
             res.json().then((data)=>{
@@ -42,11 +27,11 @@ function Login({ setLogin, user }) {
           }
         })
         }
-    
-  
+
     return (
       <>
       <form className="loginForm" onSubmit={handleSubmit}>
+        <p className="login-text"><strong> Login Here! </strong></p>
         <p>
         <input 
           className="usernameInput"
@@ -64,11 +49,10 @@ function Login({ setLogin, user }) {
           onChange={(e) => setPassword(e.target.value)}/>
           </p>
         <button className="loginButton"type="submit">Login</button>
-        <p>Dont have an account?</p>
-      </form>
+        <p className="account-text"><strong>Don't have an account?</strong></p>
         <button className="createAccountButton" onClick={()=> history.push('/SignUp')}>Create Account</button>
+        </form>
       </>
-      
     );
   }
 export default Login;

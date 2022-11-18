@@ -35,5 +35,4 @@ function Game({title, image, platform, userAddRental, id}){
     )
 }
 
-// rented ? <button onclick="deleteRental">Return</button> : <button onClick="updateRentalStatus">Rent</button>
 export default Game;

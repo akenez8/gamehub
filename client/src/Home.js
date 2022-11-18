@@ -39,11 +39,12 @@ function Home({games, userAddRental}){
     return(
     <div>
         <div id="gaming_image_home">
-            <p className="DescribeText">Rent Games Digitally</p>
             <img style={{width: 700, height: 300}} src="https://wallpaperaccess.com/full/174714.jpg" alt="Gaming is not a crime"/>
         </div>
-      <p className="DescribeText"><strong>GameHub</strong> is the newest video game rentals, with many titles to choose from used video games without worrying about any late fees. At GameHub, you will find the used video games with the <em>newest systems</em> to blast from the <i>past</i>.</p>
+      <p className="DescribeText">Rent Games Digitally!</p>
+      <p className="DescribeText"><strong>GameHub</strong> is the newest video game rental platform with many games to choose from. You're able to rent used video games without worrying about late fees. At GameHub, you will find used video games from the <em> newest systems </em> to <em> older systems </em> such as the SNES!</p>
       <p className="TopGames">Top 5 Games</p>
+      <hr></hr>
         <div className="row">
             <div className='column'>
                 <div id='home_card'>

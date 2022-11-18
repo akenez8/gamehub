@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-
 function SignUp() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -28,16 +27,18 @@ function SignUp() {
   return (
     <div>
       <form className="signup-container" onSubmit={handleSubmit}>
-        Name
         <input
+          className="signup-input"
           type="text"
           value={name}
+          placeholder="name"
           onChange={(e) => setName(e.target.value)}
         />
-        Password
         <input
+          className="signup-input"
           type="password"
           value={password}
+          placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <div>

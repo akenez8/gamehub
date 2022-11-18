@@ -40,4 +40,5 @@ const RentAGame = ({games, userAddRental}) => {
         </div>
     )
 }
+
 export default RentAGame;
