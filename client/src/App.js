@@ -13,7 +13,7 @@ import SignUp from "./SignUp"
 function App() {
   const [games,setGames]= useState([]);
   const [user, setUser] = useState(false);
-  const [logout, setLogout] = useState(null);
+  const [logout, setLogout] = useState("");
   const [login, setLogin] = useState('');
   const [rentals, setRentals] = useState([])
 
@@ -49,9 +49,9 @@ function App() {
     setUser(user);
   }
 
-  // function onLogout() {
-  //   setUser("");
-  // }
+  function onLogout() {
+    setUser("");
+  }
   return (
     <div className="App">
       <Router>
@@ -65,7 +65,7 @@ function App() {
         <Route path="/RentAGame"><RentAGame games={games} /></Route>
         <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals}/></Route>
         <Route path="/SignUp"><SignUp setLogin={setUser} user={user} /></Route>
-        <Route exact path="/"><Home games={games}/></Route>
+        <Route exact path="/"><Home games={games} onLogout={onLogout}/></Route>
       </Switch>
       </Router>
     </div>
