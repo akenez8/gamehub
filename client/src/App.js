@@ -63,8 +63,8 @@ function App() {
       <Switch>
         <Route path="/me"><Me /></Route>
         <Route path="/login"><Login setLogin={setUser}/></Route>
-        <Route path="/RentAGame"><RentAGame games={games} rented={rented} setRented={setRented} /></Route>
-        <Route path="/MyRentals"><MyRentals user={user} rentals = {rentals} setRentals={setRentals}/></Route>
+        <Route path="/RentAGame"><RentAGame games={games} rented={rented} setRented={setRented} user={user} /></Route>
+        <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals} user={user}/></Route>
         <Route path="/SignUp"><SignUp /></Route>
         <Route exact path="/"><Home games={games}/></Route>
       </Switch>

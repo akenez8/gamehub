@@ -254,5 +254,5 @@ puts "Creating Rentals..."
     Rental.create(user_id: rand(1..6), game_id: rand(1..238), day: 7)
 end
 
-Rental.create(user_id: 2, game_id:1 , day:7)
+Rental.create(user_id: 2, game_id: 1, day:7)
 puts "Seeding done"
