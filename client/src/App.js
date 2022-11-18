@@ -33,22 +33,6 @@ function App() {
   // let userRentals = [...rentals]
   // let addedRental = []
 
-
-  // function onRentButtonClick(){
-  //   fetch('/rentals',{
-  //     method:'POST',
-  //     headers: {'Content-Type': 'application/json'},
-  //     body:JSON.stringify({...formData, ongoing:true})
-  //   })
-  //   .then(res => {
-  //     if(res.ok){
-  //       res.json().then(addRental)
-  //     } else {
-  //       //Display errors
-  //       res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
-  //     }
-  //   })
-  // }
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {
