@@ -6,18 +6,22 @@ function Game({title, image, platform}){
     return(
         <div className="gameCard">
             <span className="bold">{title}</span>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                            <img className="cardImage" id="game_img" src={image} width="220" height="180" alt="{title}"/>
+                    </div>
+                </div>
+            </div> 
+            <p className="console">{platform}
             <img className="cardImage" id="game_img" src={image} width="220" height="180" alt="{title}"/>
             <p className="console">{platform}</p>
             <p>
             <button>Rent</button>
-            <select onChange={(e) => setDay(e.target.value)}>
-                <option value="" disabled>Days Rent</option>
-                <option value="7">7 days</option>
-                <option value="14">14 days</option>
-                <option value="21">21 days</option>
-                <option value="30">30 days</option>
-            </select>
             </p>
+            <p>
+                <button className="rentButton">Rent</button>
+            </p>   
         </div>
     )
 }
