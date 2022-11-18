@@ -22,6 +22,8 @@ function App() {
     fetch("/games")
     .then((res) => res.json())
     .then((data) => setGames(data))
+
+    const user = sessionStorage.getItem('user')
   },[])
 
   useEffect(() => {
@@ -29,37 +31,32 @@ function App() {
     .then((res) => res.json())
     .then((data) => setRentals(data))
   },[])
-  console.log(rentals)
+  // console.log(rentals)
   // let userRentals = [...rentals]
   // let addedRental = []
 
   // const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("/me").then((response) => {
-  //     if (response.ok) {
-  //       response.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    const currentUser = sessionStorage.getItem('user')
+    if(currentUser){
+      setUser(JSON.parse(currentUser))
+    }
+  }, []);
 
-  if (!user) {
-    return <Login setLogin={onLogin} />
-  } else {
-    <h2>Welcome, {user.name}!</h2>
-  }
   function onLogin(user) {
     setUser(user);
   }
 
   function onLogout() {
+    sessionStorage.removeItem('user')
     setUser("");
   }
   return (
     <div className="App">
       <Router>
       <header className="App-header">
-        <Navbar user={user} setUser={setUser} setLogout={setLogout}/>
+        <Navbar user={user} setUser={setUser} setLogout={onLogout}/>
       </header>
       <p className="font-effect-fire-animation">GameHub</p>
       <Switch>
@@ -67,8 +64,8 @@ function App() {
         <Route path="/login"><Login setLogin={setUser}/></Route>
         <Route path="/RentAGame"><RentAGame games={games} rented={rented} setRented={setRented} /></Route>
         <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals}/></Route>
-        <Route path="/SignUp"><SignUp setLogin={setUser} user={user} /></Route>
-        <Route exact path="/"><Home games={games} onLogout={onLogout}/></Route>
+        <Route path="/SignUp"><SignUp /></Route>
+        <Route exact path="/"><Home games={games}/></Route>
       </Switch>
       </Router>
     </div>

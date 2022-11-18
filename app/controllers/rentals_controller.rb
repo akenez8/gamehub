@@ -6,6 +6,7 @@ class RentalsController < ApplicationController
     end
 
     def show
+        Rental.find({user_id: params[:id]})
         render json: find_rental, status: :ok
     end
 

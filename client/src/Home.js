@@ -1,29 +1,40 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Game from "./Game"
 
 function Home({games}){
-    let arr = [];
-
-for (let x = 0; x < games.length; x++) {
-    arr.push(games[x])
-    for (let i = arr.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * i);
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-}
-
-let randomGames = []
-for (let i = 0; i < 5 ; i++) {
-    randomGames.push(arr[i])
-}
-
-    const gamesCardTwo = randomGames.map((game) => {
-        return(
+    const [randomList, setRandomList] = useState([])
+    useEffect(()=>{
+        function randomGameList(){
+            let arr = [];
+    
+            for (let x = 0; x < games.length; x++) {
+                arr.push(games[x])
+                for (let i = arr.length - 1; i > 0; i--) {
+                    let j = Math.floor(Math.random() * i);
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
             
-            <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
-        )})
+            let randomGames = []
+            for (let i = 0; i < 5 ; i++) {
+                randomGames.push(arr[i])
+            }
+            setRandomList(randomGames)
+        }
+        randomGameList()
+    },[games])
+
+    const gamesCardTwo = () => {
+      if(randomList.length > 0 && randomList[0] !== undefined){
+        return randomList.map((game) => {
+            return(
+                <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
+            )
+        })
+      }
+    }
 
     return(
     <div>
@@ -36,7 +47,7 @@ for (let i = 0; i < 5 ; i++) {
         <div className="row">
             <div className='column'>
                 <div id='home_card'>
-                    {gamesCardTwo}
+                    {gamesCardTwo()}
                 </div>
             </div>
         </div>
