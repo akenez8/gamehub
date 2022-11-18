@@ -26,6 +26,7 @@ function Game({title, image, platform, userAddRental, id}){
                 <option value="21">21 days</option>
                 <option value="30">30 days</option>
             </select>
+
             </p>
             <div>
                 <button onClick={handleClick}>Rent</button>

@@ -82,6 +82,7 @@
 }
 
 .bold {
+  padding-top: 5%;
   font-weight: bold;
   color: white;
 }
@@ -92,6 +93,7 @@
 }
 
 .gameCard {
+  font-family: 'Play', serif;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -107,10 +109,25 @@
   box-shadow: 5px 5px white;
 }
 
-.MyRentalsTitle{
-  font-size: 40px;
-  color:orange;
+.cardImage {
+  display: flex;
+  align-self: center;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.flip-box {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
 }
 
 .cardImage{
@@ -138,7 +155,11 @@
   transform: rotateY(360deg);
 }
 
-.DescribeText{
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(360deg);
+}
+
+.DescribeText {
   font-family: 'Play', serif;
   min-height: 5vh;
   font-size: 20px;
@@ -154,11 +175,6 @@
   font-size: 40px;
   color: white;
   font-style: oblique;
-}
-
-#game_img {
-  border-style: solid;
-  border-radius: 1rem;
 }
 
 #home_card {
