@@ -13,8 +13,6 @@ import SignUp from "./SignUp"
 function App() {
   const [games,setGames]= useState([]);
   const [user, setUser] = useState(false);
-  const [logout, setLogout] = useState("");
-  const [login, setLogin] = useState('');
   const [rentals, setRentals] = useState([])
   const [rented, setRented] = useState(false)
   const [fetchedData, setFetchedData] = useState(false)

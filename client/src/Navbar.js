@@ -15,9 +15,10 @@ function Navbar({ user, setUser, setLogout }) {
 }
     return(
     <header className="navHeader">
-      {user && <span className="usernameSpan">Welcome, {user.name}!</span>}
       <div className="logoutButtonDiv">
         <button className="logoutButton" onClick={handleLogout}>Logout</button>
+        {user && <span className="usernameSpan">Welcome, {user.name}!</span>}
+        { user ? <button className="logoutButton" onClick={handleLogout}>Logout</button> : null} 
       </div>
       <div>
         <NavLink  className="nav" class="active" style={{ marginRight: "10px" }} exact to="/" >Home</NavLink>

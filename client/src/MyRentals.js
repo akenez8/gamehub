@@ -17,11 +17,11 @@ const [myRentals, setMyRentals] = useState([])
         return(
             <UserRentalGames updateDay={day} userUpdateRental={userUpdateRental} id={id}title={game.title} image={game.image} platform={game.platform} deleteRental={deleteRental}/>
         )})
-    
 
     return(
         <div>
-            <p className="MyRentalsTitle">Your Rented Games</p>
+            <p className="myRentalsTitle">Your Rented Games:</p>
+            <hr></hr>
             <div className="row">
                 <div className='column'>
                     <div id="home_card">
@@ -29,11 +29,8 @@ const [myRentals, setMyRentals] = useState([])
                     </div>
                 </div>
             </div>
-
         </div>
-        
     )
-
 }
 
 export default MyRentals;
