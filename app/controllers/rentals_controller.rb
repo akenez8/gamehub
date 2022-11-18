@@ -10,7 +10,7 @@ class RentalsController < ApplicationController
     end
 
     def create
-        rental = @user.rentals.create!(rental_params)
+        rental = Rental.create!(rental_params)
         render json: rental, status: :created
     end
 

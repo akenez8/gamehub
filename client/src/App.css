@@ -102,6 +102,12 @@
   height: 340px;
 }
 
+.MyRentalsTitle{
+  font-size: 40px;
+  color:orange;
+  text-align: center;
+}
+
 .cardImage{
   display:flex;
   align-self: center;

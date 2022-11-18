@@ -19,17 +19,36 @@ function App() {
   const [rented, setRented] = useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:4000/games")
+    fetch("/games")
     .then((res) => res.json())
     .then((data) => setGames(data))
   },[])
 
   useEffect(() => {
-    fetch("http://localhost:4000/rentals")
+    fetch("/rentals")
     .then((res) => res.json())
     .then((data) => setRentals(data))
-  }, [])
+  },[])
+  console.log(rentals)
+  // let userRentals = [...rentals]
+  // let addedRental = []
 
+
+  // function onRentButtonClick(){
+  //   fetch('/rentals',{
+  //     method:'POST',
+  //     headers: {'Content-Type': 'application/json'},
+  //     body:JSON.stringify({...formData, ongoing:true})
+  //   })
+  //   .then(res => {
+  //     if(res.ok){
+  //       res.json().then(addRental)
+  //     } else {
+  //       //Display errors
+  //       res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+  //     }
+  //   })
+  // }
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {
@@ -62,7 +81,7 @@ function App() {
       <Switch>
         <Route path="/me"><Me /></Route>
         <Route path="/login"><Login setLogin={setUser}/></Route>
-        <Route path="/RentAGame"><RentAGame games={games} /></Route>
+        <Route path="/RentAGame"><RentAGame games={games} rented={rented} setRented={setRented} /></Route>
         <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals}/></Route>
         <Route path="/SignUp"><SignUp setLogin={setUser} user={user} /></Route>
         <Route exact path="/"><Home games={games}/></Route>
