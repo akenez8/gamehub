@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Game({title, image, platform}){
+function UserRentalGames({title, image, platform}){
 
     return(
         <div className="gameCard">
@@ -15,4 +15,4 @@ function Game({title, image, platform}){
 }
 
 // rented ? <button onclick="deleteRental">Return</button> : <button onClick="updateRentalStatus">Rent</button>
-export default Game;
+export default UserRentalGames;
