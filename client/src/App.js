@@ -30,9 +30,7 @@ function App() {
     .then((data) => setRentals(data))
   },[])
   console.log(rentals)
-  // let userRentals = [...rentals]
-  // let addedRental = []
-
+  
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {
