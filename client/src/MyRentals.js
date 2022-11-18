@@ -1,29 +1,35 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import UserRentalGames from "./UserRentalGames";
 
-function MyRentals({rentals, setRentals, user}){
+function MyRentals({rentals, userUpdateRental, user, deleteRental}){
 const [myRentals, setMyRentals] = useState([])
-    // const userRentedGames = rentals.map((rental) => {
-    //     return(
-    //         (rental.game)
-    //     )})
-    if(myRentals.length > 0 && myRentals[0] !== undefined){
-        console.log(rentals);
-        const filteredUserRentedGames = rentals.filter((rental) => {
-            return (rental.user_id === user.id)})
-
-        setMyRentals(filteredUserRentedGames)
-    }
-    const userGameCard = myRentals.map((game) => {
+    useEffect(() => {
+        if(rentals.length > 0){
+            console.log(rentals)
+            const filteredUserRentedGames = rentals.filter((rental) => {
+                return (rental.user_id === user.id)})
+    
+            setMyRentals(filteredUserRentedGames)
+        }
+    },[rentals])
+    
+    const userGameCard = myRentals.map(({game, id, day}) => {
         return(
-            <UserRentalGames title={game.title} image={game.image} platform={game.platform}/>
+            <UserRentalGames updateDay={day} userUpdateRental={userUpdateRental} id={id}title={game.title} image={game.image} platform={game.platform} deleteRental={deleteRental}/>
         )})
     
 
     return(
         <div>
             <p className="MyRentalsTitle">Your Rented Games</p>
-            <p>{userGameCard}</p>
+            <div className="row">
+                <div className='column'>
+                    <div id="home_card">
+                        {userGameCard}
+                    </div>
+                </div>
+            </div>
+
         </div>
         
     )

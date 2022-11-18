@@ -1,12 +1,12 @@
 import React, {useReducer, useState} from 'react';
 import Game from "./Game"
 
-const RentAGame = ({games}) => {
+const RentAGame = ({games, userAddRental}) => {
     const [console, setConsole] = useState("All")
     const RentAGameComp = games.filter((game) => {
         if (console === "All") return true
         return game.platform === console
-    }).map((game) => <Game key={game.id} title={game.title} image={game.image} platform={game.platform}/>)
+    }).map((game) => <Game key={game.id} id ={game.id} title={game.title} image={game.image} platform={game.platform} userAddRental={userAddRental}/>)
 
     return (
         <div>

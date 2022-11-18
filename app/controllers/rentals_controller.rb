@@ -15,6 +15,12 @@ class RentalsController < ApplicationController
         render json: rental, status: :created
     end
 
+    def update
+        rental = find_rental
+        rental.update(params.permit(:day))
+        render json: rental, status: :accepted
+    end
+
     def destroy
         find_rental.destroy
         head :no_content
@@ -23,7 +29,7 @@ class RentalsController < ApplicationController
     private
 
     def find_rental
-        Rental.find(params[:id])
+        Rental.find_by(id: params[:id])
     end
 
     def rental_params

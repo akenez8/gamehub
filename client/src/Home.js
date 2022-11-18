@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Game from "./Game"
 
-function Home({games}){
+function Home({games, userAddRental}){
     const [randomList, setRandomList] = useState([])
     useEffect(()=>{
         function randomGameList(){
@@ -30,7 +30,7 @@ function Home({games}){
       if(randomList.length > 0 && randomList[0] !== undefined){
         return randomList.map((game) => {
             return(
-                <Game key={game.id} title={game.title} image={game.image} platform ={game.platform} />
+                <Game key={game.id} id={game.id} title={game.title} image={game.image} platform ={game.platform} userAddRental={userAddRental}/>
             )
         })
       }

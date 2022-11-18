@@ -1,5 +1,5 @@
 class Rental < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :game, dependent: :destroy
+  belongs_to :user
+  belongs_to :game
   validates :game, uniqueness: true
 end

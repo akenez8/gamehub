@@ -17,6 +17,7 @@ function App() {
   const [login, setLogin] = useState('');
   const [rentals, setRentals] = useState([])
   const [rented, setRented] = useState(false)
+  const [fetchedData, setFetchedData] = useState(false)
 
   useEffect(() => {
     fetch("/games")
@@ -30,12 +31,47 @@ function App() {
     fetch("/rentals")
     .then((res) => res.json())
     .then((data) => setRentals(data))
-  },[])
-  // console.log(rentals)
-  // let userRentals = [...rentals]
-  // let addedRental = []
+  },[fetchedData])
 
-  // const [user, setUser] = useState(null);
+
+  function userAddRental(id, day){
+    setFetchedData(true)
+    const newObj = {
+      user_id: user.id,
+      game_id: id,
+      day: parseInt(day)
+    }
+    console.log(newObj)
+    const requestOptions = {
+    method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newObj)
+    };
+    fetch('/rentals', requestOptions)
+        .then(response => response.json())
+        .then(data => setFetchedData(false));
+     }
+
+     function userUpdateRental(id, day){
+      setFetchedData(true)
+      const requestOptions = {
+        method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({day:day})
+        };
+        fetch(`/rentals/${id}`, requestOptions)
+            .then(response => response.json())
+            .then(data => setFetchedData(false));
+         }
+
+      function deleteRental(id){
+        setFetchedData(true)
+        const requestOptions = {
+          method: 'DELETE'
+        };
+        fetch(`/rentals/${id}`, requestOptions)
+        .then(() => setFetchedData(false))
+      }
 
   useEffect(() => {
     const currentUser = sessionStorage.getItem('user')
@@ -62,10 +98,10 @@ function App() {
       <Switch>
         <Route path="/me"><Me /></Route>
         <Route path="/login"><Login setLogin={setUser}/></Route>
-        <Route path="/RentAGame"><RentAGame games={games} rented={rented} setRented={setRented} user={user} /></Route>
-        <Route path="/MyRentals"><MyRentals rentals = {rentals} setRentals={setRentals}/></Route>
+        <Route path="/RentAGame"><RentAGame games={games} rented={rented} setRented={setRented} user={user} userAddRental={userAddRental} /></Route>
+        <Route path="/MyRentals"><MyRentals userUpdateRental={userUpdateRental} rentals = {rentals} setRentals={setRentals} user={user} deleteRental={deleteRental}/></Route>
         <Route path="/SignUp"><SignUp /></Route>
-        <Route exact path="/"><Home games={games}/></Route>
+        <Route exact path="/"><Home games={games} userAddRental={userAddRental}/></Route>
       </Switch>
       </Router>
     </div>
