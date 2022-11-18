@@ -23,6 +23,10 @@
   background-color: dimgrey;
 }
 
+.usernameSpan{
+  color: orange;
+}
+
 .logoutButton{
   display: flex;
   justify-content: right;

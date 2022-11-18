@@ -3,18 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 function Navbar({ user, setUser, setLogout }) {
+
   let history = useHistory();
-    // function handleLogout() {
-    //     fetch("/logout", {
-    //       method: "DELETE",
-    //     })
-    //     .then(res => {
-    //       if (res.ok) {
-    //         console.log('delete')
-    //       }
-    //     })
-    //   }
-    
       
       function handleLogout() {
         fetch("/logout", {
@@ -23,9 +13,9 @@ function Navbar({ user, setUser, setLogout }) {
           history.push(`/`);
           setUser([]);
 }
-
     return(
     <header className="navHeader">
+      {user && <span className="usernameSpan">Welcome, {user.name}!</span>}
       <div className="logoutButtonDiv">
         <button className="logoutButton" onClick={handleLogout}>Logout</button>
       </div>

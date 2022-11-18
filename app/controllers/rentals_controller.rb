@@ -6,11 +6,12 @@ class RentalsController < ApplicationController
     end
 
     def show
+        Rental.find({user_id: params[:id]})
         render json: find_rental, status: :ok
     end
 
     def create
-        rental = @user.rentals.create!(rental_params)
+        rental = Rental.create!(rental_params)
         render json: rental, status: :created
     end
 
@@ -26,6 +27,6 @@ class RentalsController < ApplicationController
     end
 
     def rental_params
-        params.permit(:user_id, :game_id)
+        params.permit(:user_id, :game_id, :day)
     end
 end
